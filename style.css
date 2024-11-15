@@ -15,8 +15,8 @@ h1 {
   height: 5rem;
   line-height: 5rem;
 }
-h2{
-    text-align: center;
+h2 {
+  text-align: center;
 }
 
 .choice {
@@ -31,9 +31,8 @@ h2{
 }
 
 .choice:hover {
-
   transition: transform 0.25s ease-in-out;
-  box-shadow: 0 0 10px #16425B;
+  box-shadow: 0 0 10px #16425b;
 }
 
 #choices {
@@ -60,13 +59,35 @@ img {
   margin-top: 3rem;
   font-size: 2rem;
   gap: 5rem;
-
 }
 
-#player-score, #computer-score{
-    font-size: 4rem;
+#player-score,
+#computer-score {
+  font-size: 4rem;
 }
 
-.msg-container{
+/* Below is the code for Message box */
 
+.msg-container {
+  margin-top: 2.5rem;
+}
+
+#move,
+#reset {
+  background-color: #081b31;
+  color: #fff;
+  font-size: 2rem;
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 1.25rem;
+}
+
+#reset {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+  &:hover {
+    background-color: #333;
+  }
 }
