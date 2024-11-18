@@ -1,93 +1,179 @@
-/* Initializing our Style sheet */
-
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
   align-items: center;
   box-sizing: border-box;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #16425b;
-  color: #d9dcd6;
-  height: 5rem;
-  line-height: 5rem;
-}
-h2 {
-  text-align: center;
-}
-
-.choice {
-  height: 165px;
-  width: 165px;
-  display: flex;
-  border-radius: 50%;
-  cursor: pointer;
+body {
+  background-color: #f0f4f8; /* Light Greyish Blue */
+  color: #2c3e50; /* Dark Slate */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.choice:hover {
-  transition: transform 0.25s ease-in-out;
-  box-shadow: 0 0 10px #16425b;
+/* Title */
+h1 {
+  font-family: "Poppins", sans-serif;
+  background-color: #ff6f61; /* Soft Coral */
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Choices (Rock, Paper, Scissors) */
 #choices {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.choice {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #88bdbc; /* Soft Teal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.choice:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.choice:active {
+  transform: scale(1.1);
 }
 
 img {
-  height: 165px;
-  width: 165px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Below is the code for Scrore board */
-
+/* Scoreboard */
 .score-board {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  margin-bottom: 3rem;
   font-size: 2rem;
   gap: 5rem;
+  transition: font-size 0.2s ease-in-out;
 }
 
 #player-score,
 #computer-score {
-  font-size: 4rem;
+  font-size: 3.5rem;
+  color: #2c3e50; /* Dark Slate */
+  font-weight: 600;
 }
 
-/* Below is the code for Message box */
+.score-board p {
+  margin: 0;
+  padding: 0.5rem;
+}
 
+/* Message Box */
 .msg-container {
-  margin-top: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-#move,
-#reset {
-  background-color: #081b31;
+#move {
+  background-color: #6b4226; /* Earthy Brown */
   color: #fff;
   font-size: 2rem;
-  display: inline-block;
-  padding: 1rem;
-  border-radius: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-out;
 }
 
+/* Reset Button */
 #reset {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  background-color: #ff6f61; /* Soft Coral */
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 1.2rem 2.5rem;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.25s ease-in-out;
-  &:hover {
-    background-color: #333;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#reset:hover {
+  background-color: #e5564d; /* Darker Coral */
+  transform: scale(1.1);
+}
+
+#reset:active {
+  transform: scale(1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  #choices {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .choice {
+    height: 140px;
+    width: 140px;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .score-board {
+    gap: 3rem;
+  }
+
+  #player-score,
+  #computer-score {
+    font-size: 2.5rem;
+  }
+
+  #move {
+    font-size: 1.5rem;
+  }
+
+  #reset {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
   }
 }
